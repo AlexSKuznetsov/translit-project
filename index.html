@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <!-- Заголовок-->
+  <section class="hero is-primary is-medium is-bold">
+    <section class="section">
+      <div class="container">
+        <h1 class="title has-text-centered">
+          Финальный проект T.R.A.N.S.L.I.T.
+        </h1>
+        <p class="subtitle has-text-centered">
+          Это приложение переводит в <strong>транслит </strong> введённый в текстовое поле текст!
+        </p>
+      </div>
+    </section>
+  </section>
+
+  <!-- Ввод данных-->
+  <div class="block" style="margin-top: 40px">
+    <div class="columns is-centered is-mobile">
+      <div class="box is-half has-background-warning">
+        <div class="column">
+          <div class="field has-addons">
+            <div class="control">
+              <input id="input" class="input" type="text" placeholder="Введите слова">
+            </div>
+            <div class="control">
+              <a id="button" class="control button is-dark">Добавить</a>
+            </div>
+            <div class="control">
+              <a id="delete" class="control button is-danger" aria-label="Удаляет все данные" data-balloon-pos="up">
+                <span class="icon">
+                  <i class="fa fa-trash-alt"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- отображение данных-->
+    <div class="container">
+      <div class="block" style="margin-top: 40px">
+        <div class="columns is-centered">
+          <div class="column is-one-third">
+            <div class="box">
+              <article class="message is-info">
+                <div class="message-header">
+                  <p>Русский язык</p>
+                </div>
+                <div id="input-text" class="message-body has-text-centered">
+
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="column is-one-third">
+            <div class="box">
+              <article class="message is-success">
+                <div class="message-header">
+                  <p>Translit</p>
+                </div>
+                <div id="translit-text" class="message-body has-text-centered">
+
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer is-fixed-buttom" style="margin-top: 100px;">
+      <div class="content has-text-centered">
+        <p><strong>Alexandr Kuznetsov</strong></p>
+        <p>Сделано с помощью <a href="https://bulma.io/">Bulma</a> и Javascript в 2020г.</p>
+
+      </div>
+    </footer>
+
+</body>
+<script src="js/app.js"></script>
+
+</html>
