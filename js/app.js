@@ -28,7 +28,7 @@ function translit(str) {
     у: "u",
     ф: "f",
     х: "h",
-    ц: "c",
+    ц: "ts",
     ч: "ch",
     ш: "sh",
     щ: "shch",
@@ -50,11 +50,6 @@ function translit(str) {
     );
   }
   return newStr.join("");
-}
-
-// Показывать красную рамку вокруг инпута если пытаются отправить пустую строку
-function showError() {
-  inputField.style.border = "2px solid red";
 }
 
 // Генерация рандомных ID для элементов, на случай если текст инпута будет одинаковый
