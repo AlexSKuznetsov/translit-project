@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <style type="text/css" media="screen">
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    #wrapper {
+      flex: 1;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -25,8 +38,10 @@
     </section>
   </section>
 
-  <!-- Ввод данных-->
+
   <div class="block" style="margin-top: 40px">
+
+    <!-- Ввод данных-->
     <div class="columns is-centered is-mobile">
       <div class="box is-half has-background-warning">
         <div class="column">
@@ -60,7 +75,6 @@
                   <p>Русский язык</p>
                 </div>
                 <div id="input-text" class="message-body has-text-centered">
-
                 </div>
               </article>
             </div>
@@ -72,7 +86,6 @@
                   <p>Translit</p>
                 </div>
                 <div id="translit-text" class="message-body has-text-centered">
-
                 </div>
               </article>
             </div>
@@ -82,14 +95,16 @@
     </div>
 
     <!-- Футер -->
-    <footer class="footer is-fixed-buttom" style="margin-top: 100px;">
+    <footer class="footer" style="margin-top: 100px;">
       <div class="content has-text-centered">
         <p><strong>Alexandr Kuznetsov</strong></p>
         <p>Сделано с помощью <a href="https://bulma.io/">Bulma</a> и Javascript в 2020г.</p>
-
+        <a href="https://bulma.io">
+          <img src="/img/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+        </a>
       </div>
     </footer>
-
+    
 </body>
 <script src="js/app.js"></script>
 

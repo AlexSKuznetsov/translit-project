@@ -52,38 +52,25 @@ function translit(str) {
   return newStr.join("");
 }
 
-// Генерация рандомных ID для элементов, на случай если текст инпута будет одинаковый
-function randomIdGenerator() {
-  const min = 100;
-  const max = 1000;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 // Добавление текста в дивы
 function addToDiv(inputValue) {
   const newPElement = document.createElement("p");
   newPElement.innerText = inputValue;
-  newPElement.style.textOverflow = "ellipsis";
-  newPElement.style.overflow = "hidden";
-  newPElement.style.whiteSpace = "nowrap";
   newPElement.setAttribute("aria-label", `${inputValue}`);
-  newPElement.setAttribute("data-balloon-pos", "left");
+  newPElement.setAttribute("data-balloon-pos", "up");
+  newPElement.setAttribute("data-balloon-length", "large");
+  inputDiv.append(newPElement);
 
-  newPElement.id = randomIdGenerator();
-  inputDiv.appendChild(newPElement);
+  // получение транслита текста
+  const translitValue = translit(inputValue);
 
   // запись транслита
-  const translitValue = translit(inputValue);
   const newPTranslitElement = document.createElement("p");
   newPTranslitElement.innerText = translitValue;
-  newPTranslitElement.style.textOverflow = "ellipsis";
-  newPTranslitElement.style.overflow = "hidden";
-  newPTranslitElement.style.whiteSpace = "nowrap";
   newPTranslitElement.setAttribute("aria-label", `${translitValue}`);
-  newPTranslitElement.setAttribute("data-balloon-pos", "right");
-
-  newPTranslitElement.id = randomIdGenerator();
-  translitDiv.appendChild(newPTranslitElement);
+  newPTranslitElement.setAttribute("data-balloon-pos", "up");
+  newPTranslitElement.setAttribute("data-balloon-length", "large");
+  translitDiv.append(newPTranslitElement);
 }
 
 // Обработчик событий кнопки ввода
@@ -91,9 +78,10 @@ function eventHandling() {
   const inputValue = document.querySelector("#input").value;
   addToDiv(inputValue);
   // отчистка поля ввода после всех действий
-  document.querySelector("#input").value = "";
+  inputField.value = "";
 }
 
+// удаление всех данных из поля отображения ввода
 function deleteHandler() {
   const allPTag = document.querySelectorAll("#input-text p, #translit-text p");
   for (let i = 0; i < allPTag.length; i++) {
@@ -101,5 +89,6 @@ function deleteHandler() {
   }
 }
 
+// устанока прослушивателей
 button.addEventListener("click", eventHandling);
 deleteButton.addEventListener("click", deleteHandler);
